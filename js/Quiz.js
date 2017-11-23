@@ -21,6 +21,17 @@ class Quiz {
 		}
 	}
 
+	nextQuestion() {
+		this.currentQuestionIndex += 1;
+		this.render();
+		if(this.currentQuestionIndex === 10){
+			return("Gratulacje");
+		}
+		else{
+			nextQuestion();
+		}
+	}
+
 	// wyswietla aktualne pytanie na stronie
 	render() {
 		document.querySelector('.question').innerHTML = this.questions[this.currentQuestionIndex].question;
