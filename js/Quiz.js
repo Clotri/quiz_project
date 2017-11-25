@@ -26,3 +26,12 @@ class Quiz {
 		document.querySelector('.question').innerHTML = this.questions[this.currentQuestionIndex].question;
 	}
 }
+
+// time - zmienić to na klasę
+var sec=61;
+function stopwatch() {
+  (sec>1)?sec--:sec="End of time!";     // docelowo: uznanie odp. za false
+  document.getElementsByClassName("time")[0].innerHTML=(sec>0)?sec+" seconds":sec;
+  setTimeout("stopwatch();",1000);
+}
+window.onload = stopwatch;
