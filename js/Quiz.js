@@ -2,6 +2,7 @@ class Quiz {
 	constructor() {
 		this.questions = [];	// baza pytań
 		this.currentQuestionIndex = 0; // indeks aktualnego pytania
+		this.timer = new Timer();
 		this.getQuestions();
 	}
 
@@ -24,5 +25,6 @@ class Quiz {
 	// wyswietla aktualne pytanie na stronie
 	render() {
 		document.querySelector('.question').innerHTML = this.questions[this.currentQuestionIndex].question;
+		this.timer.start();
 	}
 }
