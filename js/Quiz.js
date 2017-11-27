@@ -21,15 +21,19 @@ class Quiz {
 		}
 	}
 
-	nextQuestion() {
+	// przeście między pytaniami
+ 	nextQuestion() {
 		this.currentQuestionIndex += 1;
-		this.render();
-		if(this.currentQuestionIndex === 10){
-			return("Gratulacje");
+
+		if (this.currentQuestionIndex === 10) {
+			this.endQuiz();
+		} else {
+			this.render();
 		}
-		else{
-			nextQuestion();
-		}
+	}
+
+	endQuiz() {
+		alert("Gratulacje");
 	}
 
 	// wyswietla aktualne pytanie na stronie
