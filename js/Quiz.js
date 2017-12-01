@@ -2,8 +2,9 @@ class Quiz {
 	constructor() {
 		this.questions = [];	// baza pytań
 		this.currentQuestionIndex = 0; // indeks aktualnego pytania
-		this.timer = new Timer();
+	 	this.timer = new Timer();
 		this.getQuestions();
+		this.activateButtons();
 	}
 
 	// Przypisanie pytań do this.questions
@@ -19,6 +20,35 @@ class Quiz {
             console.log(this.questions);
 				this.render();
 			}
+		}
+	}
+
+   checkAnswer(answer) {
+      if (answer === this.questions[this.currentQuestionIndex].correct_answer) {
+         console.log('correct');
+      } else {
+         console.log('incorrect');
+      }
+			this.nextQuestion();
+			this.timer.reset();
+   }
+
+   activateButtons() {
+      document.querySelector('.answertrue').addEventListener('click', () => {
+			this.checkAnswer('True');
+		});
+		document.querySelector('.answerfalse').addEventListener('click', () => {
+			this.checkAnswer('False');
+		});
+   }
+
+	nextQuestion() {
+		this.currentQuestionIndex += 1;
+
+		if (this.currentQuestionIndex >= 10) {
+			console.log('Koniec quizu');
+		} else {
+			this.render();
 		}
 	}
 
