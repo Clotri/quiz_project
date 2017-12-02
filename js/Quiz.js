@@ -47,10 +47,23 @@ class Quiz {
 
 		if (this.currentQuestionIndex >= 10) {
 			console.log('Koniec quizu');
+
+	// przeście między pytaniami
+ 	nextQuestion() {
+		this.currentQuestionIndex += 1;
+
+		if (this.currentQuestionIndex === 10) {
+			this.endQuiz();
 		} else {
 			this.render();
 		}
 	}
+
+
+	endQuiz() {
+		alert("Gratulacje");
+	}
+
 
 	// wyswietla aktualne pytanie na stronie
 	render() {
