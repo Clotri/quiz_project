@@ -42,12 +42,6 @@ class Quiz {
 		});
    }
 
-	nextQuestion() {
-		this.currentQuestionIndex += 1;
-
-		if (this.currentQuestionIndex >= 10) {
-			console.log('Koniec quizu');
-
 	// przeście między pytaniami
  	nextQuestion() {
 		this.currentQuestionIndex += 1;
