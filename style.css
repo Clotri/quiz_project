@@ -2,6 +2,8 @@ body
 {
 	margin: 0;
 	color: #606060;
+	font-family: 'Encode Sans Condensed', sans-serif;
+	font-weight: 400;
 }
 .container
 {
@@ -49,6 +51,7 @@ body
 	text-align: center;
 	padding: 20px;
 	border: 5px solid white;
+	font-size: 26px;
 }
 .qmark
 {
@@ -61,7 +64,8 @@ body
 	background-color: #C9AE79;
 	text-align: center;
 	padding: 20px;
-	font-size: 70px;
+	font-weight: 700;
+	font-size: 90px;
 	color: #EEEDEB;
 }
 .time
@@ -76,12 +80,14 @@ body
 	text-align: center;
 	padding: 20px;
 	border: 5px solid #2E8D5D;
+	font-size: 26px;
 }
 .question
 {
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 60px;
+	font-size: 25px;
 }
 .answers
 {
@@ -98,6 +104,7 @@ body
 	float: left;
 	text-align: center;
 	padding: 30px;
+	font-size: 30px;
 }
 .answerfalse
 {
@@ -107,6 +114,7 @@ body
 	margin-left: 20px;
 	text-align: center;
 	padding: 30px;
+	font-size: 30px;
 }
 .answertrue:hover, .answerfalse:hover
 {
