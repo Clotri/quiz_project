@@ -1,0 +1,119 @@
+body
+{
+	margin: 0;
+	color: #606060;
+	font-family: 'Encode Sans Condensed', sans-serif;
+	font-weight: 400;
+}
+
+.container
+{
+	width: 100%;
+	background-color: #3CAF72;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.middle
+{
+	margin-left: 30px;
+	margin-right: 30px;
+	padding: 20px 30px;
+	background-color: #EEEDEB;
+}
+
+.congrats
+{
+	font-size: 50px;
+	font-weight: 500;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.result
+{
+font-size: 35px;
+text-align: center;
+padding: 15px;
+}
+
+.pointline
+{
+	height: 15px;
+	width: 500px;
+	background-color: #2E8D5D;
+	position: relative;
+}
+
+.redline
+{
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 90%;
+	background-color: red;
+}
+.undertheline
+{
+	display: flex;
+	justify-content: space-between;
+}
+
+.time
+{
+	font-size: 35px;
+	text-align: center;
+	margin-top: 13px;
+}
+
+.buttons
+{
+	width: 100%;
+	height: 60px;
+	font-size: 35px;
+	font-weight: lighter;
+	color: #EEEDEB;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.button1
+{
+	width: 35%;
+	height: 45px;
+	background-color: #2E8D5D;
+	text-align: center;
+	margin-right: 5px;
+}
+
+.button1:hover
+{
+	cursor: pointer;
+	background-color: #B89D68;
+	transition: all 0.3s;
+}
+
+.button2
+{
+	width: 35%;
+	height: 45px;
+	background-color: #2E8D5D;
+	text-align: center;
+	margin-left: 5px;
+}
+
+.button2:hover
+{
+	cursor: pointer;
+	background-color: #B89D68;
+	transition: all 0.3s;
+}
