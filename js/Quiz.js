@@ -2,9 +2,10 @@ class Quiz {
 	constructor() {
 		this.questions = [];	// baza pytań
 		this.currentQuestionIndex = 0; // indeks aktualnego pytania
-	 	this.timer = new Timer();
+	 	this.timer = new Timer(this.checkAnswer.bind(this));
 		this.getQuestions();
 		this.activateButtons();
+		this.points = 0;
 	}
 
 	// Przypisanie pytań do this.questions
@@ -25,13 +26,21 @@ class Quiz {
 
    checkAnswer(answer) {
       if (answer === this.questions[this.currentQuestionIndex].correct_answer) {
-         console.log('correct');
+         this.addPoint();
       } else {
          console.log('incorrect');
       }
 			this.nextQuestion();
 			this.timer.reset();
    }
+
+	 addPoint() {
+		this.points += 1;
+	 }
+
+	 renderPoints() {
+		document.querySelector('.number').innerHTML = this.points;
+	 }
 
    activateButtons() {
       document.querySelector('.answertrue').addEventListener('click', () => {
@@ -50,14 +59,29 @@ class Quiz {
 			this.endQuiz();
 		} else {
 			this.render();
+			this.renderPoints();
 		}
 	}
 
-
 	endQuiz() {
-		alert("Gratulacje");
+		this.timer.stopTimer();
+		document.querySelector('.middle').innerHTML = `
+		 <div class="congrats">
+			 Congratulations!
+		 </div>
+		 <div class="result">
+			Your Score: ${this.points} pkt
+		 </div>
+		 <div class="pointline">
+			 <div class="redline" style="left:${this.points*10}%;"></div>
+		 </div>
+		 <div class="undertheline">
+			 <div class="pointleft">0</div>
+			 <div class="timeresults" style="display: none;">Your time:</div>
+			 <div class="pointright">10</div>
+		 </div>
+		`;
 	}
-
 
 	// wyswietla aktualne pytanie na stronie
 	render() {
